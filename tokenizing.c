@@ -28,14 +28,14 @@ void tokenizing(void)
     } while (strcmp(words, "q") != 0);
     printf("*** End of tokenizing Words Demo ***\n\n");
 
-   // V2
-     
-    printf("*** Start of Tokenizing Phrases Demo ***\n"); 
+    // V2
+
+    printf("*** Start of Tokenizing Phrases Demo ***\n");
     char phrases[BUFFER_SIZE]; // Create an array to hold the input phrases, with length defined by BUFFER_SIZE
     char* nextPhrase = NULL; // Pointer to hold the address of the next tokenized phrases
     int phrasesCounter;  //defined variable integer phrasesCounter
     do {
-        printf("Type a few phrases separated by comma (q - to quit) :\n"); 
+        printf("Type a few phrases separated by comma (q - to quit) :\n");
         fgets(phrases, BUFFER_SIZE, stdin);// Read a input from the user
         phrases[strlen(phrases) - 1] = '\0'; // Replace the newline character from fgets with a string terminator
         if (strcmp(phrases, "q") != 0) {  // Check if the input is not 'q' (to quit)
@@ -46,11 +46,11 @@ void tokenizing(void)
                 nextPhrase = strtok(NULL, ","); // Continue to tokenize the rest of the phrases.
             }
         }
-    } while (strcmp(phrases, "q") != 0); 
+    } while (strcmp(phrases, "q") != 0);
     printf("*** End of Tokenizing Phrases Demo ***\n\n");
 
-   // V3
-      
+    // V3
+
     printf("*** Start of Tokenizing Sentences Demo ***\n");
     char sentences[BUFFER_SIZE]; // Array to hold input sentences
     char* nextSentence = NULL; // Pointer to hold the address of the next tokenized sentence
@@ -70,8 +70,8 @@ void tokenizing(void)
             // Tokenize and print each sentence
             while (nextSentence) {
                 printf("Sentence #%d is \'%s\'\n", sentencesCounter++, nextSentence);
-                nextSentence = strtok(NULL, ".");  
-            } 
+                nextSentence = strtok(NULL, ".");
+            }
         }
     } while (strcmp(sentences, "q") != 0);
     printf("*** End of Tokenizing Sentences Demo ***\n\n");
